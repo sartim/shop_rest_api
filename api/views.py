@@ -127,7 +127,6 @@ class OrdersTodayViewSet(viewsets.ModelViewSet):
     Count all orders for the day
     """
     serializer_class = OrderSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
         today = timezone.datetime.today()  # Get current day
