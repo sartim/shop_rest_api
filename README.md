@@ -1,6 +1,6 @@
-# Shop REST API
+# Django Shop API
 
-REST API using Django REST Framework for an online shop.
+REST API which exposes endpoints both for an online shop and a CMS admin. It's developed using Django framework & Django REST framework dependency. The database configuration for the app relies on PostgreSQL.
 
 ##### (Optional)
     $ virtualenv -p python3 venv
