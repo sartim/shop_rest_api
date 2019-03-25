@@ -8,6 +8,7 @@ django-rest-swagger==2.1.2
 djangorestframework==3.7.7
 djangorestframework-jwt==1.11.0
 gunicorn==19.7.1
+phonenumbers==8.10.8
 pillow==5.4.1
 psycopg2==2.7.7
 psycopg2-binary==2.7.7
