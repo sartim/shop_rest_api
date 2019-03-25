@@ -8,7 +8,6 @@ from django.contrib.auth.models import (
 from django_countries.fields import CountryField
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from disposable_email_checker.fields import DisposableEmailField
 from core.models import AbstractDateModel
 
 
@@ -25,7 +24,6 @@ class UserManager(BaseUserManager):
         user = self.model(
             username=self.normalize_email(email),
             email=self.normalize_email(email),
-            invite_code=generate_random_string(),
             **extra_fields
         )
         user.set_password(password)
@@ -49,7 +47,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin, AbstractDateModel):
-    email = DisposableEmailField(db_index=True, unique=True)
+    email = models.CharField(max_length=128, unique=True)
     first_name = models.CharField(max_length=30)
     middle_name = models.CharField(max_length=30, null=True)
     last_name = models.CharField(max_length=30, null=True)
@@ -107,4 +105,4 @@ class User(AbstractBaseUser, PermissionsMixin, AbstractDateModel):
 
 class LoggedInUser(models.Model):
     user = models.OneToOneField(
-        settings.AUTH_USER_MODEL, related_name='logged_in_user')
+        settings.AUTH_USER_MODEL, related_name='logged_in_user', on_delete=models.CASCADE)
