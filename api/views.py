@@ -3,8 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import connection
 from django.utils import timezone
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
 from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
 from rest_framework.response import Response
@@ -159,11 +157,11 @@ def orders_last_month(request):
     if request.method == 'GET':
         cursor = connection.cursor()
         sql = """
-                        SELECT COUNT(id)
-                        FROM api_order
-                        WHERE created >= date_trunc('month', current_date - interval '1' month)
-                        AND created < date_trunc('month', current_date)
-                      """
+                SELECT COUNT(id)
+                FROM api_order
+                WHERE created >= date_trunc('month', current_date - interval '1' month)
+                AND created < date_trunc('month', current_date)
+              """
         cursor.execute(sql)
         rows = cursor.fetchall()
         result = []
@@ -180,13 +178,13 @@ def orders_plot(request):
     if request.method == 'GET':
         cursor = connection.cursor()
         orders_sql = """
-                            SELECT
-                            MAX(id) as id,
-                            COUNT(id) AS value,
-                            to_char(created, 'yyyy-mm-dd') AS date
-                            FROM api_order
-                            GROUP BY date ORDER BY date ASC
-                         """
+                        SELECT
+                        MAX(id) as id,
+                        COUNT(id) AS value,
+                        to_char(created, 'yyyy-mm-dd') AS date
+                        FROM api_order
+                        GROUP BY date ORDER BY date ASC
+                     """
 
         cursor.execute(orders_sql)
         rows = cursor.fetchall()
@@ -198,4 +196,3 @@ def orders_plot(request):
             return Response(result)
         else:
             return Response([{"detail": "No results"}])
-
