@@ -21,6 +21,9 @@ There are multiple options of running the server
 ###### Using gunicorn
     $ gunicorn app.wsgi --log-file -
 
+###### Building & running on docker
+    $ docker build -t django-shop-api:latest .
+    
 **Deploying API to Heroku**
 
     $ git init && git add .
