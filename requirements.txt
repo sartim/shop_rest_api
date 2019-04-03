@@ -1,6 +1,5 @@
 channels==2.1.7
 Django==2.1.7
-django-countries-5.3.3
 django-cors-headers==2.1.0
 django-dotenv==1.4.2
 django-phonenumber-field==2.2.0
@@ -12,4 +11,5 @@ phonenumbers==8.10.8
 pillow==5.4.1
 psycopg2==2.7.7
 psycopg2-binary==2.7.7
+pycountry=18.12.8
 whitenoise==3.3.1
