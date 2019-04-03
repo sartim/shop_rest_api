@@ -8,7 +8,26 @@ REST API which exposes endpoints both for an online shop and a CMS admin. It's d
     
 ##### Install requirements
     $ pip install -r requirments.txt
-    
+
+##### Add dotenv to project root
+
+You should create a .env file on the project root using the following format:
+
+When using PostgreSQL DB_URL
+
+    ENV={PROD/DEV/STAGE}
+    DB_HOST={DB_HOST}
+    DB_NAME={DB_NAME}
+    DB_USER={DB_USER}
+    DB_PASSWORD={DB_PASSWORD}
+    DB_PORT={DB_PORT}
+    SECRET={SECRET}
+
+When using sqlite for test
+
+    ENV=TEST
+    SECRET={SECRET}
+       
 ##### Run server
 There are multiple options of running the server
 
