@@ -5,7 +5,6 @@ from django.conf import settings
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
-from django_countries.fields import CountryField
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from core.models import AbstractDateModel
@@ -52,7 +51,6 @@ class User(AbstractBaseUser, PermissionsMixin, AbstractDateModel):
     middle_name = models.CharField(max_length=30, null=True)
     last_name = models.CharField(max_length=30, null=True)
     phone = PhoneNumberField(blank=True, null=True)
-    country = CountryField(blank_label='Select Country')
     original_referrer = models.CharField(max_length=255, blank=True, null=True)
     invite_code = models.CharField(max_length=10, unique=True)
     is_active = models.BooleanField(default=True)
