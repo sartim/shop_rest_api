@@ -17,10 +17,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='API DOC')
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
+    url(r'^docs/', schema_view),
     url(r'', include('core.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
