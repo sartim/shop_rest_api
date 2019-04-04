@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_swagger',
+    'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
 ]
 
