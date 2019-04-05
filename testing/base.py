@@ -6,11 +6,13 @@ dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), '.en
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app.settings")
 application = get_wsgi_application()
 
+from rest_framework.test import APIClient
+
 
 class Base:
     @classmethod
     def setup_class(cls):
-        pass
+        cls.client = APIClient()
 
     @classmethod
     def teardown_class(cls):
