@@ -13,7 +13,8 @@ class Base:
     @classmethod
     def setup_class(cls):
         cls.client = APIClient()
+        os.system('python manage.py migrate')
 
     @classmethod
     def teardown_class(cls):
-        pass
+        os.system('rm test.sqlite3')
