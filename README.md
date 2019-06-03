@@ -10,7 +10,7 @@ REST API which exposes endpoints both for an online shop and a CMS admin. It's d
     $ source venv/bin/activate
     
 ##### Install requirements
-    $ pip install -r requirments.txt
+    $ pip install -r requirements.txt
 
 ##### Add dotenv to project root
 
