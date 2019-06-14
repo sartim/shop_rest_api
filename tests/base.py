@@ -14,6 +14,7 @@ class Base:
     def setup_class(cls):
         cls.client = APIClient()
         os.system('python manage.py migrate')
+        os.system('python manage.py add_product_data')
 
     @classmethod
     def teardown_class(cls):
