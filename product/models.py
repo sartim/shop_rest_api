@@ -17,6 +17,7 @@ class Product(models.Model):
     class Meta:
         ordering = ('name',)
         index_together = (('id', 'slug'),)
+        db_table = 'products'
 
     def __str__(self):
         return self.name
