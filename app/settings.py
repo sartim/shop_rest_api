@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
+    'product.apps.ProductConfig',
+    'category.apps.CategoryConfig',
 ]
 
 ASGI_APPLICATION = "app.routing.application"
