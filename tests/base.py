@@ -13,6 +13,10 @@ class Base:
     @classmethod
     def setup_class(cls):
         cls.client = APIClient()
+        cls.product_url = '/api/v1/product/'
+        cls.user_url = '/api/v1/account/user/'
+        cls.category_url = '/api/v1/category/'
+        cls.order_url = '/api/v1/order/'
         os.system('python manage.py migrate')
         os.system('python manage.py add_product_data')
 
