@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
     'product.apps.ProductConfig',
-    'category.apps.CategoryConfig',
+    'order.apps.OrderConfig',
 ]
 
 ASGI_APPLICATION = "app.routing.application"
