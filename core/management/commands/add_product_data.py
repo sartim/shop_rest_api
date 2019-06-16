@@ -4,7 +4,7 @@ import time
 
 from django.core.management.base import BaseCommand
 
-from category.models import Category
+from product.category.models import ProductCategory
 from helpers.utils import slugify
 from product.models import Product
 
@@ -27,7 +27,7 @@ class Command(BaseCommand):
                 product.price = price
                 product.brand = brand
                 product.image_urls = image_urls
-                category = Category(name=category, slug='{}-{}'.format(slugify(name), time.time()))
+                category = ProductCategory(name=category, slug='{}-{}'.format(slugify(name), time.time()))
                 category.save()
                 product.category_id = category.id
                 product.stock = stock
