@@ -1,10 +1,9 @@
 from rest_framework import serializers
-from category.models import Category
+from product.category.models import ProductCategory
 
 
 class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Category
+        model = ProductCategory
         fields = ('name', 'slug',)
-        # fields = '__all__'

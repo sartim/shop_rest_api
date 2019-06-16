@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Category(models.Model):
+class ProductCategory(models.Model):
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
 
@@ -9,7 +9,7 @@ class Category(models.Model):
         ordering = ('name',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
-        db_table = 'categories'
+        db_table = 'product_categories'
 
     def __str__(self):
         return self.name
