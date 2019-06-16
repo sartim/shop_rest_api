@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls')),
     url(r'^docs/', schema_view),
     url(r'', include('core.urls')),
-    url(r'', include('product.urls'))
+    url(r'', include('product.api.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
