@@ -4,9 +4,6 @@ from product.models import Product
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    """
-    Products
-    """
     serializer_class = ProductSerializer
 
     def get_queryset(self, *args, **kwargs):

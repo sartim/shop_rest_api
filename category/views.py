@@ -4,9 +4,6 @@ from category.serializers import CategorySerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
-    """
-    Categories
-    """
     serializer_class = CategorySerializer
 
     def get_queryset(self, *args, **kwargs):

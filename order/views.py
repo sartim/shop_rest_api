@@ -8,9 +8,6 @@ from order.models import Order, OrderItem
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    """
-    Orders
-    """
     serializer_class = OrderSerializer
 
     def get_queryset(self, *args, **kwargs):
@@ -19,9 +16,6 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 
 class OrderItemViewSet(viewsets.ModelViewSet):
-    """
-    Orders Items
-    """
     serializer_class = OrderItemSerializer
 
     def get_queryset(self, *args, **kwargs):
@@ -33,9 +27,6 @@ class OrderItemViewSet(viewsets.ModelViewSet):
 
 
 class OrdersTodayViewSet(viewsets.ModelViewSet):
-    """
-    Count all orders for the day
-    """
     serializer_class = OrderSerializer
 
     def get_queryset(self):
@@ -49,9 +40,6 @@ class OrdersTodayViewSet(viewsets.ModelViewSet):
 
 
 class OrdersThisMonthViewSet(viewsets.ModelViewSet):
-    """
-    Count all orders for the month
-    """
     serializer_class = OrderSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
