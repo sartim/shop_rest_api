@@ -1,9 +1,10 @@
 from django.db import models
-from category.models import Category
+from product.category.models import ProductCategory
 
 
 class Product(models.Model):
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    category = models.ForeignKey(ProductCategory, related_name='products',
+                                 on_delete=models.CASCADE)
     name = models.CharField(max_length=200, db_index=True)
     slug = models.SlugField(max_length=200, db_index=True, unique=True)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
