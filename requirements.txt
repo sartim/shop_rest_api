@@ -11,6 +11,6 @@ phonenumbers==8.10.8
 pillow==7.0.0
 psycopg2==2.7.7
 psycopg2-binary==2.8.4
-pycountry==18.12.8
+pycountry==19.8.18
 pytest==5.4.1
 whitenoise==4.1.2
