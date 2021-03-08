@@ -8,7 +8,7 @@ djangorestframework==3.11.0
 djangorestframework-jwt==1.11.0
 gunicorn==20.0.4
 phonenumbers==8.11.5
-pillow==7.0.0
+pillow==8.1.2
 psycopg2==2.8.4
 psycopg2-binary==2.8.4
 pycountry==19.8.18
