@@ -9,7 +9,7 @@ class ProductCategory(models.Model):
         ordering = ('name',)
         verbose_name = 'category'
         verbose_name_plural = 'categories'
-        db_table = 'product_categories'
+        db_table = 'product_category'
 
     def __str__(self):
         return self.name

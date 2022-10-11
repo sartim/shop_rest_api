@@ -10,7 +10,7 @@ class OrderStatus(AbstractDateModel, models.Model):
 
     class Meta:
         ordering = ('-created',)
-        db_table = 'order_statuses'
+        db_table = 'order_status'
 
     def __str__(self):
         return 'Order {}'.format(self.id)
