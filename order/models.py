@@ -12,11 +12,10 @@ class Order(models.Model):
 
     class Meta:
         ordering = ('-created',)
-        db_table = 'order_statuses'
+        db_table = 'order'
 
     def __str__(self):
         return 'Order {}'.format(self.id)
 
     def get_total_cost(self):
         return sum(item.get_cost() for item in self.items.all())
-
