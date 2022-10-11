@@ -1,5 +1,5 @@
 from django.contrib import admin
-from order.models import Order, OrderItem
+from order.models import Order
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -8,9 +8,3 @@ class OrderAdmin(admin.ModelAdmin):
 
 admin.site.register(Order, OrderAdmin)
 
-
-class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ('order', 'product', 'price', 'quantity')
-
-
-admin.site.register(OrderItem, OrderItemAdmin)
