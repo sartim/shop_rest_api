@@ -12,9 +12,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'email', 'date_joined', 'first_name', 'last_name', 'password',
-                  'confirm_password')
-        read_only_fields = ('date_joined',)
+        fields = (
+            'id', 'username', 'email', 'first_name', 'last_name', 'password',
+            'confirm_password')
+        # read_only_fields = ('date_joined',)
 
     def create(self, validated_data):
         user = User.objects.filter(email=validated_data['email'])
