@@ -11,4 +11,4 @@ gunicorn==19.7.1
 phonenumbers==8.11.5
 pillow==5.4.1
 psycopg2-binary==2.7.7
-whitenoise==3.3.1
+whitenoise==6.2.0
