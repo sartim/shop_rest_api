@@ -11,9 +11,9 @@ urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^api-auth/', include('rest_framework.urls')),
     re_path(r'^docs/', schema_view),
-    re_path(r'^$', include('product.api.urls')),
-    re_path(r'^$', include('accounts.urls')),
-    re_path(r'^$', include('core.urls')),
+    re_path(r'', include('product.api.urls')),
+    re_path(r'', include('accounts.urls')),
+    re_path(r'', include('core.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:
