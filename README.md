@@ -1,7 +1,7 @@
 # Django Shop API
 
 [![Language](https://img.shields.io/badge/language-python-green.svg)](https://github.com/sartim/django_shop_api)
-![Build Status](https://github.com/sartim/django_shop_api/workflows/Master%20Workflow/badge.svg)
+![Build Status](https://github.com/sartim/django_shop_api/workflows/build/badge.svg)
 
 
 REST API developed using Django & Django REST framework. It also uses channels for the socket API
