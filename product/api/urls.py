@@ -1,7 +1,6 @@
-from django.conf.urls import url
-from django.urls import include
+from django.urls import include, re_path
 
 urlpatterns = [
-    url(r'', include('product.api.product_api')),
-    url(r'', include('product.api.product_category_api'))
+    re_path(r'', include('product.api.product_api')),
+    re_path(r'', include('product.api.product_category_api'))
 ]

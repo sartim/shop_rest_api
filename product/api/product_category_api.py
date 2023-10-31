@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import re_path
 from rest_framework import viewsets
 from product.category.serializers import CategorySerializer
 from product.category.models import ProductCategory
@@ -18,6 +18,6 @@ category_detail = ProductCategoryViewSet.as_view({'get': 'retrieve', 'put': 'upd
                                                   'delete': 'destroy'})
 
 urlpatterns = [
-    url(r'^api/v1/category/$', category_list, name="category-list"),
-    url(r'^api/v1/category/(?P<pk>[0-9]+)/$', category_detail, name="category-detail"),
+    re_path(r'^api/v1/category/$', category_list, name="category-list"),
+    re_path(r'^api/v1/category/(?P<pk>[0-9]+)/$', category_detail, name="category-detail"),
 ]
