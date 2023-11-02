@@ -1,5 +1,5 @@
 channels==4.0.0
-Django==4.1.10
+Django==4.1.13
 django-countries==7.5.1
 django-cors-headers==3.14.0
 django-dotenv==1.4.2
