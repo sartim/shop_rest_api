@@ -167,7 +167,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
-    'PAGE_SIZE': os.environ.get('PAGE_LIMIT')
+    'PAGE_SIZE': int(os.environ.get('PAGE_LIMIT'))
 }
 
 
