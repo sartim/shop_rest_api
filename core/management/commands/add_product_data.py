@@ -33,4 +33,4 @@ class Command(BaseCommand):
                 product.stock = stock
                 product.available = True
                 product.save()
-                self.stdout.write(self.style.SUCCESS('Successfully finished adding data'))
+        self.stdout.write(self.style.SUCCESS('Successfully finished adding data'))
