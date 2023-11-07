@@ -23,6 +23,8 @@ product_detail = ProductViewSet.as_view(
 )
 
 urlpatterns = [
-    re_path(r'^api/v1/products/$', product_list, name="product-list"),
-    re_path(r'^api/v1/products/(?P<pk>[0-9]+)/$', product_detail, name="product-detail"),
+    re_path(r'^api/v1/products', product_list, name="product-list"),
+    re_path(
+        r'^api/v1/products/(?P<pk>[0-9]+)',
+        product_detail, name="product-detail"),
 ]

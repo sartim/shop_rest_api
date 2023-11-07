@@ -19,7 +19,7 @@ You should create a .env file on the project root using the following format:
 
 When using PostgreSQL DB_URL
 
-    ENV={PROD/DEV/STAGE}
+    ENV={PROD/STAGE/DEV/TEST}
     DB_HOST={DB_HOST}
     DB_NAME={DB_NAME}
     DB_USER={DB_USER}
