@@ -12,7 +12,7 @@ class TestProduct(Base):
     def test_get_by_id(self):
         self.client = APIClient()
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + str(self.token))
-        response = self.client.get('{}1'.format(self.product_url), format='json')
+        response = self.client.get('{}1/'.format(self.product_url), format='json')
         assert response.status_code == 200
 
     def test_post(self):
@@ -37,12 +37,12 @@ class TestProduct(Base):
             "description": "some description for product"
         }
         response = self.client.get(
-            '{}1'.format(self.product_url), data=data, format='json')
+            '{}1/'.format(self.product_url), data=data, format='json')
         assert response.status_code == 200
 
     def test_delete(self):
         self.client = APIClient()
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + str(self.token))
         response = self.client.delete(
-            '{}1'.format(self.product_url))
-        assert response.status_code == 200
+            '{}1/'.format(self.product_url))
+        assert response.status_code == 204
