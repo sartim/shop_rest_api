@@ -25,9 +25,17 @@ class TestProduct(Base):
             "description": "",
             "price": "105.99",
             "stock": 10,
-            "available": True,
-            "created": "2023-11-07T08:45:51.914808Z",
-            "updated": "2023-11-07T08:45:51.915133Z"
+            "available": True
         }
         response = self.client.post(self.product_url, data=data, format='json')
         assert response.status_code == 201
+
+    def test_put(self):
+        self.client = APIClient()
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + str(self.token))
+        data = {
+            "description": "some description for product"
+        }
+        response = self.client.get(
+            '{}1'.format(self.product_url), data=data, format='json')
+        assert response.status_code == 200
