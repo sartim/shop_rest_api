@@ -39,3 +39,13 @@ class TestProduct(Base):
         response = self.client.get(
             '{}1'.format(self.product_url), data=data, format='json')
         assert response.status_code == 200
+
+    def test_delete(self):
+        self.client = APIClient()
+        self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + str(self.token))
+        data = {
+            "description": "some description for product"
+        }
+        response = self.client.delete(
+            '{}1'.format(self.product_url), data=data, format='json')
+        assert response.status_code == 200
