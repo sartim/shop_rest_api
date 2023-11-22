@@ -43,9 +43,6 @@ class TestProduct(Base):
     def test_delete(self):
         self.client = APIClient()
         self.client.credentials(HTTP_AUTHORIZATION='Bearer ' + str(self.token))
-        data = {
-            "description": "some description for product"
-        }
         response = self.client.delete(
-            '{}1'.format(self.product_url), data=data, format='json')
+            '{}1'.format(self.product_url))
         assert response.status_code == 200
